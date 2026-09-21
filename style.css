@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe6ee, #fff7f9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    color: #c94f7c;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #8d6672;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.garden {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.flower-box {
+    width: 150px;
+}
+
+/* Hide checkbox */
+.flower-box input {
+    display: none;
+}
+
+/* Tulip */
+.flower {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(190, 90, 120, 0.15);
+
+    transition: 0.4s ease;
+}
+
+/* Tulip animation */
+.flower:hover {
+    transform: translateY(-10px) scale(1.08);
+}
+
+/* Message */
+.message {
+    background: white;
+    margin-top: 15px;
+    padding: 18px;
+    border-radius: 18px;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+
+    transform: translateY(-10px);
+
+    transition: 0.5s ease;
+
+    box-shadow: 0 8px 20px rgba(190, 90, 120, 0.12);
+}
+
+.message p {
+    color: #684852;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Show message when clicked */
+.flower-box input:checked ~ .message {
+    opacity: 1;
+    max-height: 200px;
+    transform: translateY(0);
+}
+
+/* Tulip when clicked */
+.flower-box input:checked + .flower {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Bottom text */
+.bottom {
+    margin-top: 40px;
+    color: #a25a70;
+    font-size: 15px;
+    font-style: italic;
+}
+
+/* Phone */
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .garden {
+        gap: 18px;
+    }
+
+    .flower-box {
+        width: 130px;
+    }
+
+    .flower {
+        width: 130px;
+        height: 130px;
+        font-size: 60px;
+    }
+}
